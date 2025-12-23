@@ -114,3 +114,28 @@ button {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6); /* Blanco semi-transparente */
+    letter-spacing: 1px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.3)); /* Sutil degradado */
+}
+
+footer strong {
+    color: #d4af37; /* Nombre en dorado */
+    font-weight: 600;
+}
+
+/* Ajuste para móviles: si la pantalla es muy pequeña, reducimos el padding */
+@media (max-height: 600px) {
+    footer {
+        padding: 5px 0;
+        font-size: 0.75rem;
+    }
+}
