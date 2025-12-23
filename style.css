@@ -8,30 +8,42 @@ body {
     align-items: center;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: white;
-    overflow: hidden;
+    overflow: hidden; /* Evita scrolls innecesarios en móviles */
 }
 
-/* Tarjeta Principal */
+/* Tarjeta Principal - Responsiva */
 .card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(12px);
-    padding: 40px;
+    padding: 30px;
     border-radius: 30px;
-    border: 2px solid #d4af37; /* Dorado */
+    border: 2px solid #d4af37;
     text-align: center;
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-    max-width: 400px;
-    width: 90%;
+    width: 85%;      /* Ancho para móviles */
+    max-width: 450px; /* Ancho máximo para tablets/PC */
+    box-sizing: border-box;
 }
 
-/* Estilos de Entrada */
-.icon-header { font-size: 50px; margin-bottom: 10px; }
+/* Tipografía Responsiva */
+h1 { 
+    font-size: 1.8rem; 
+    margin-bottom: 15px; 
+    color: #f8d7da;
+}
 
-h1 { margin-top: 0; color: #f8d7da; }
+#personalizedGreeting {
+    font-size: 2.2rem;
+    color: #d4af37;
+    margin: 15px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    word-wrap: break-word; /* Evita que nombres largos rompan el diseño */
+}
 
+/* Inputs y Botones adaptados al toque (Touch) */
 input {
-    width: 80%;
-    padding: 12px;
+    width: 90%;
+    padding: 15px; /* Más grande para que sea fácil tocar en móvil */
     border-radius: 25px;
     border: none;
     margin-bottom: 20px;
@@ -44,38 +56,51 @@ button {
     background: #b3000c;
     color: white;
     border: none;
-    padding: 12px 30px;
+    padding: 15px 35px;
     border-radius: 25px;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s, background 0.3s;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    width: 100%; /* Botón ancho en móviles */
+    max-width: 250px;
 }
 
-button:hover {
-    background: #e60010;
-    transform: scale(1.05);
+/* --- MEDIA QUERIES --- */
+
+/* Ajustes para Tablets (pantallas medianas) */
+@media (min-width: 768px) {
+    .card {
+        padding: 50px;
+    }
+    h1 { font-size: 2.2rem; }
+    #personalizedGreeting { font-size: 3rem; }
+    button { width: auto; } /* El botón vuelve a su tamaño natural */
 }
 
-/* Sección de Felicitación */
-.hidden {
-    display: none;
+/* Ajustes para Móviles pequeños o en horizontal */
+@media (max-height: 500px) {
+    .card {
+        padding: 15px;
+    }
+    .icon-header, .gift-icon { display: none; } /* Ocultamos iconos para ganar espacio */
+    h1 { font-size: 1.4rem; margin: 5px; }
 }
+
+/* Animaciones y Estados */
+.hidden { display: none; }
 
 #messageContainer {
-    animation: fadeIn 2s ease-out;
+    animation: fadeIn 1.5s ease-out;
 }
 
-#personalizedGreeting {
-    font-size: 2.5rem;
-    color: #d4af37;
-    margin: 10px 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .wish-text {
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.4;
     color: #eee;
 }
 
@@ -83,12 +108,6 @@ button:hover {
     font-size: 40px;
     margin-top: 20px;
     animation: bounce 2s infinite;
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes bounce {
