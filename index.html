@@ -3,35 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Felicitación Navideña Mágica</title>
+    <title>Felicitación Navideña</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="card">
         <div id="input-section">
-            <div class="icon-header">🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄🎄</div>
+            <div class="icon-header">🎄</div>
             <h1>Sorpresa Navideña</h1>
-            <p>Escribe tu nombre para recibir tu sorpresa:</p>
-            <input type="text" id="userName" placeholder="Tu nombre aquí..." autocomplete="off">
+            <p>Escribe tu nombre:</p>
+            <input type="text" id="userName" placeholder="Nombre aquí..." autocomplete="off">
             <button id="btnMagic">Ver mi felicitación</button>
         </div>
 
         <div id="messageContainer" class="hidden">
             <div class="stars">✨ ✨ ✨</div>
             <h2 id="personalizedGreeting"></h2>
-            <p class="wish-text">Que la magia de estas fiestas ilumine tu hogar y el de tu familia.</p>
-            <div class="gift-icon">🎁</div>
+            <p class="wish-text"></p>
+            
+            <div id="giftButton" class="gift-icon">🎁</div>
+            <p class="tap-hint">(Toca el regalo para ver tu sorpresa)</p>
         </div>
     </div>
 
-    <audio id="carol" src="https://www.mfiles.co.uk/mp3-downloads/jingle-bells-keyboard.mp3" preload="auto"></audio>
-    
+    <div id="photoModal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <img id="surprisePhoto" src="image.jpeg" alt="Nuestra Foto">
+            <div class="modal-footer">❤️ Felices Fiestas ❤️</div>
+        </div>
+    </div>
 
-    <script src="script.js"></script>
-<footer>
-        Desarrollado por: <strong>Oscar Mangut</strong>
-    </footer>
+    <footer>Desarrollado por: <strong>Oscar Mangut</strong></footer>
+
+    <audio id="carol" src="https://www.mfiles.co.uk/mp3-downloads/jingle-bells-keyboard.mp3" preload="auto"></audio>
 
     <script src="script.js"></script>
 </body>
