@@ -1,0 +1,97 @@
+/* Configuración General */
+body {
+    background: radial-gradient(circle, #1a472a, #0d2114);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+/* Tarjeta Principal */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 30px;
+    border: 2px solid #d4af37; /* Dorado */
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    max-width: 400px;
+    width: 90%;
+}
+
+/* Estilos de Entrada */
+.icon-header { font-size: 50px; margin-bottom: 10px; }
+
+h1 { margin-top: 0; color: #f8d7da; }
+
+input {
+    width: 80%;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1rem;
+    outline: none;
+}
+
+button {
+    background: #b3000c;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    font-size: 1rem;
+}
+
+button:hover {
+    background: #e60010;
+    transform: scale(1.05);
+}
+
+/* Sección de Felicitación */
+.hidden {
+    display: none;
+}
+
+#messageContainer {
+    animation: fadeIn 2s ease-out;
+}
+
+#personalizedGreeting {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.wish-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #eee;
+}
+
+.gift-icon {
+    font-size: 40px;
+    margin-top: 20px;
+    animation: bounce 2s infinite;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
