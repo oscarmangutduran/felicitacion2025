@@ -23,7 +23,7 @@ btn.addEventListener('click', () => {
         } else {
             // Mensaje por defecto para los demás
             greetingText.innerText = `¡Feliz Navidad, ${rawName}!`;
-            wishText.innerText = "Que la magia de estas fiestas ilumine tu hogar y el de tu familia";
+            wishText.innerText = "Que la magia de estas fiestas ilumine tu hogar y el de tú familia";
         }
 
         // 3. Mostrar el contenedor
