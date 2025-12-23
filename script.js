@@ -27,7 +27,7 @@ btn.addEventListener('click', () => {
             wishText.innerText = "Por la primera navidad de muchas. Sigamos sumando momentos";
         } else {
             greetingText.innerText = `¡Feliz Navidad, ${formattedName}!`;
-            wishText.innerText = "Que la magia de estas fiestas ilumine tu hogar y el nuevo año te traiga mucha felicidad.";
+            wishText.innerText = "Que la magia de estas fiestas ilumine tu hogar y te traiga mucha felicidad.";
         }
 
         // 3. Mostrar el contenedor de la felicitación
